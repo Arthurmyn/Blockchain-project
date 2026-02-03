@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Charity Blockchain Platform</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Charity Crowdfunding DApp</h1>
+    <button id="connectWallet">Connect MetaMask</button>
+    <p id="walletAddress">Not connected</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Create Campaign</h2>
+      <input type="text" id="title" placeholder="Campaign title" />
+      <input type="number" id="goal" placeholder="Goal (ETH)" />
+      <input type="number" id="duration" placeholder="Duration (seconds)" />
+      <button id="createCampaign">Create</button>
+    </section>
+
+    <section>
+      <h2>Campaigns</h2>
+      <div id="campaignList"></div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
