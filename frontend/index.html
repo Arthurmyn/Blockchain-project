@@ -2,32 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Charity Blockchain Platform</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <title>CharityChain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/charity-blockchain/frontend/css/style.css" />
 </head>
 <body>
 
-  <header>
-    <h1>Charity Crowdfunding DApp</h1>
-    <button id="connectWallet">Connect MetaMask</button>
-    <p id="walletAddress">Not connected</p>
+  <header class="navbar">
+    <div class="logo">
+      <span>CharityChain</span>
+      <i class="fa-solid fa-hand-holding-heart logo-mark" aria-hidden="true"></i>
+    </div>
+    <nav class="nav">
+      <a href="#create-campaign">Create</a>
+      <a href="#active-campaigns">Campaigns</a>
+      <a href="#about">About</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn primary">Connect MetaMask</button>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>Create Campaign</h2>
-      <input type="text" id="title" placeholder="Campaign title" />
-      <input type="number" id="goal" placeholder="Goal (ETH)" />
-      <input type="number" id="duration" placeholder="Duration (seconds)" />
-      <button id="createCampaign">Create</button>
-    </section>
+  <section class="hero">
+    <span class="badge">Blockchain-Powered Transparency</span>
+    <h1 class="hero-title">Transparent Charity<br/><span>on the Blockchain</span></h1>
+    <p>Every donation is recorded immutably on the Ethereum blockchain.<br/>Experience complete transparency and trust in charitable giving.
+    </p>
 
-    <section>
-      <h2>Campaigns</h2>
-      <div id="campaignList"></div>
-    </section>
-  </main>
+    <div class="features">
+      <div class="feature">
+        <div class="icon"><i class="fa-regular fa-eye"></i></div>
+        <div class="feature-text">
+          <strong>100% Transparent</strong>
+          <span>Track every transaction</span>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="feature-text">
+          <strong>Fully Secure</strong>
+          <span>Smart contract powered</span>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon"><i class="fa-solid fa-heart"></i></div>
+        <div class="feature-text">
+          <strong>Direct Impact</strong>
+          <span>No intermediaries</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <script src="js/app.js"></script>
+  <section class="section" id="create-campaign">
+    <h2>Create a Campaign</h2>
+    <p class="subtitle">Start your own fundraising campaign and make a difference</p>
+
+    <div class="card form-card">
+      <label>Campaign Title</label>
+      <input type="text" placeholder="Enter your campaign title" />
+
+      <label>Description</label>
+      <textarea rows="4" placeholder="Describe the campaign in a few sentences"></textarea>
+
+      <label>Category</label>
+      <input type="text" placeholder="e.g. Health, Education" />
+
+      <div class="row">
+        <div>
+          <label>Funding Goal (ETH)</label>
+          <input type="number" placeholder="e.g. 5.0" />
+        </div>
+        <div>
+          <label>Duration (days)</label>
+          <input type="number" min="1" step="1" placeholder="e.g. 30" />
+        </div>
+      </div>
+
+      <button class="btn success full">+ Create Campaign</button>
+      <small>Connect your MetaMask wallet to create campaigns</small>
+    </div>
+  </section>
+
+  <section class="section" id="active-campaigns">
+    <h2>Active Campaigns</h2>
+    <p class="subtitle">
+      Browse and support verified charitable campaigns.
+      Every donation is tracked on the blockchain.
+    </p>
+
+    <div class="campaigns">
+      <div class="campaign-card">
+        <h3>Clean Water for Rural Communities</h3>
+        <p>Goal: <b>5 ETH</b></p>
+        <p>Raised: <b>3.2 ETH</b></p>
+        <div class="progress"><span style="width:64%"></span></div>
+        <button class="btn success full">Donate</button>
+      </div>
+
+      <div class="campaign-card">
+        <h3>Solar Panels for Schools</h3>
+        <p>Goal: <b>10 ETH</b></p>
+        <p>Raised: <b>7.5 ETH</b></p>
+        <div class="progress"><span style="width:75%"></span></div>
+        <button class="btn success full">Donate</button>
+      </div>
+
+      <div class="campaign-card">
+        <h3>Medical Supplies for Clinics</h3>
+        <p>Goal: <b>3 ETH</b></p>
+        <p>Raised: <b>0.8 ETH</b></p>
+        <div class="progress"><span style="width:27%"></span></div>
+        <button class="btn success full">Donate</button>
+      </div>
+
+      <div class="campaign-card">
+        <h3>Education Materials for Children</h3>
+        <p>Goal: <b>2.5 ETH</b></p>
+        <p>Raised: <b>2.1 ETH</b></p>
+        <div class="progress"><span style="width:84%"></span></div>
+        <button class="btn success full">Donate</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="about">
+    <p>Built for University Blockchain Course Final Project</p>
+    <small>© 2024 CharityChain. Educational demo only.</small>
+  </footer>
+
 </body>
 </html>
