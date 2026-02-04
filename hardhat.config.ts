@@ -1,7 +1,15 @@
-import { defineConfig } from "hardhat/config";
+import { HardhatUserConfig } from "hardhat/config";
 
-export default defineConfig({
+const config: HardhatUserConfig = {
   solidity: {
-    version: "0.8.28",
+    version: "0.8.30",
+    settings: {
+      optimizer: {
+        enabled: true,
+        runs: 200,
+      },
+    },
   },
-});
+};
+
+export default config;
