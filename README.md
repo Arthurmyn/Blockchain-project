@@ -21,6 +21,8 @@ The Blockchain Layer comprises the Ethereum network (simulated locally via Hardh
 ## How It Works
 The workflow begins when a user navigates to the web interface. The frontend initiates an asynchronous request to the backend API to retrieve the list of active charitable campaigns. This data is rendered for the user, displaying information such as the campaign goal and funds raised.
 To make a donation, the user connects their MetaMask wallet to the application. When the donation action is triggered, the frontend uses the Ethers.js library to construct a transaction targeting the deployed smart contract. The user signs this transaction within MetaMask. Upon confirmation by the network, the smart contract updates the on-chain balance and emits a donation event. The frontend then communicates with the backend to update the display, ensuring the user sees the immediate impact of their contribution.
+<img width="441" height="291" alt="diagramma drawio" src="https://github.com/user-attachments/assets/0db102ee-c543-48b3-bd93-9523784cc449" />
+
 
 ## Technology Stack
 The implementation utilizes a modern suite of technologies chosen for their robustness and compatibility.
