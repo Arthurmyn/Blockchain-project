@@ -1,5 +1,5 @@
 # Node modules
-/node_modules
+node_modules
 
 # Compilation output
 /dist
@@ -18,3 +18,10 @@
 
 # Hardhat coverage reports
 /coverage
+
+# Environment variables
+.env
+backend/.env
+
+# Logs
+*.log
