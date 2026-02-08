@@ -23,7 +23,10 @@
       <a href="#about">About</a>
     </nav>
     <div class="nav-actions">
-      <button class="btn primary">Connect MetaMask</button>
+      <span id="walletAddress">Not Connected</span>
+      <span id="ethBalance">ETH: -</span>
+      <span id="tokenBalance">CRT: -</span>
+      <button class="btn primary" id="connectWallet">Connect MetaMask</button>
     </div>
   </header>
 
@@ -64,7 +67,7 @@
 
     <div class="card form-card">
       <label>Campaign Title</label>
-      <input type="text" placeholder="Enter your campaign title" />
+      <input id="title" type="text" placeholder="Enter your campaign title" />
 
       <label>Description</label>
       <textarea rows="4" placeholder="Describe the campaign in a few sentences"></textarea>
@@ -75,15 +78,15 @@
       <div class="row">
         <div>
           <label>Funding Goal (ETH)</label>
-          <input type="number" placeholder="e.g. 5.0" />
+          <input id="goal" type="number" placeholder="e.g. 5.0" />
         </div>
         <div>
           <label>Duration (days)</label>
-          <input type="number" min="1" step="1" placeholder="e.g. 30" />
+          <input id="duration" type="number" min="1" step="1" placeholder="e.g. 30" />
         </div>
       </div>
 
-      <button class="btn success full">+ Create Campaign</button>
+      <button class="btn success full" id="createCampaign">+ Create Campaign</button>
       <small>Connect your MetaMask wallet to create campaigns</small>
     </div>
   </section>
@@ -95,7 +98,7 @@
       Every donation is tracked on the blockchain.
     </p>
 
-    <div class="campaigns">
+    <div class="campaigns" id="campaignList">
       <div class="campaign-card">
         <h3>Clean Water for Rural Communities</h3>
         <p>Goal: <b>5 ETH</b></p>
@@ -135,5 +138,7 @@
     <small>© 2024 CharityChain. Educational demo only.</small>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.2/ethers.umd.min.js"></script>
+  <script src="/charity-blockchain/frontend/js/app.js"></script>
 </body>
 </html>
