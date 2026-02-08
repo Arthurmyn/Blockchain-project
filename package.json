@@ -4,31 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "deploy": "hardhat run scripts/deploy.ts --network localhost"
-=======
     "test": "echo \"Error: no test specified\" && exit 1",
     "node": "hardhat node",
     "deploy:token": "hardhat run scripts/deployToken.ts --network localhost",
     "mint:token": "hardhat run scripts/mintToken.ts --network localhost"
->>>>>>> 0b2b66b (feat(hardhat): add CharityToken deploy/mint scripts and ethers plugin setup)
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "devDependencies": {
-<<<<<<< HEAD
-    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@types/node": "^20.0.0",
-    "hardhat": "^2.22.17",
-    "ts-node": "^10.9.2",
-    "typescript": "~5.4.0"
-  },
-  "dependencies": {
-    "@openzeppelin/contracts": "^5.4.0",
-    "dotenv": "^16.4.5",
-    "mongoose": "^8.2.0"
-=======
     "@nomicfoundation/hardhat-ethers": "^4.0.4",
     "@types/node": "^22.19.8",
     "ethers": "^6.16.0",
@@ -37,6 +22,5 @@
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.4.0"
->>>>>>> 0b2b66b (feat(hardhat): add CharityToken deploy/mint scripts and ethers plugin setup)
   }
 }
