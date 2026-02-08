@@ -34,6 +34,12 @@ contract CharityCrowdfunding {
         uint256 amount
     );
 
+    event RewardMinted(
+        uint256 indexed campaignId,
+        address indexed donor,
+        uint256 tokenAmount
+    );
+
     event CampaignFinalized(
         uint256 indexed campaignId,
         uint256 totalCollected
@@ -73,8 +79,13 @@ contract CharityCrowdfunding {
         Campaign storage campaign = campaigns[_campaignId];
         campaign.totalCollected += msg.value;
         donations[_campaignId][msg.sender] += msg.value;
+
+        // 1 CRT per 1 ETH donated (both use 18 decimals)
+        uint256 rewardAmount = msg.value;
+        rewardToken.mint(msg.sender, rewardAmount);
                 
         emit DonationMade(_campaignId, msg.sender, msg.value);
+        emit RewardMinted(_campaignId, msg.sender, rewardAmount);
     }
 
     function finalizeCampaign(uint256 _campaignId) external {

@@ -36,6 +36,11 @@ This project represents the culmination of research and development efforts focu
 ## Conclusion
 This project demonstrates how blockchain technology can enhance transparency and trust in charitable crowdfunding. By separating immutable financial logic from flexible off-chain data storage, the platform achieves a practical balance between security and usability. The results confirm that hybrid blockchain architectures are a viable approach for decentralized applications requiring both transparency and user-friendly design.
 
+## Proof of Donation (Level 1)
+This implementation uses `CharityToken (CRT)` as a Proof of Donation.  
+Each time a donor calls `donate()` in the crowdfunding contract, the contract mints reward tokens to the donor wallet.  
+Frontend displays CRT balance, so users can verify their participation directly from wallet-connected UI.
+
 ## References
 Buterin, V. (2013). Ethereum Whitepaper: A Next-Generation Smart Contract and Decentralized Application Platform. Ethereum Foundation.
 

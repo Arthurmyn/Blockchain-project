@@ -1,6 +1,7 @@
-import { ethers } from "hardhat";
+import { network } from "hardhat";
 
 async function main() {
+  const { ethers } = await network.connect();
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
@@ -18,7 +19,13 @@ async function main() {
   const crowdfundingAddress = await charityCrowdfunding.getAddress();
   console.log("CharityCrowdfunding deployed to:", crowdfundingAddress);
 
+  // CharityCrowdfunding must own CharityToken to mint proof-of-donation rewards
+  const ownershipTx = await charityToken.transferOwnership(crowdfundingAddress);
+  await ownershipTx.wait();
+  console.log("CharityToken ownership transferred to CharityCrowdfunding");
+
   console.log("\nCopy these addresses to your frontend/js/web3.js file!");
+  console.log("TOKEN_ADDRESS =", tokenAddress);
   console.log("CONTRACT_ADDRESS =", crowdfundingAddress);
 }
 

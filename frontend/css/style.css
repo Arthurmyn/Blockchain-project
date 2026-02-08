@@ -306,6 +306,28 @@ body {
   margin-top: auto;
 }
 
+.campaign-closed {
+  border: 2px solid #22c55e;
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.2);
+}
+
+.campaign-status {
+  display: inline-block;
+  margin: 0 0 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #166534;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.campaign-card .btn:disabled,
+.campaign-card input:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
 footer {
   text-align: center;
   padding: 40px 20px;
