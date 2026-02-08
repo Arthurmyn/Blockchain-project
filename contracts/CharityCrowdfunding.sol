@@ -73,9 +73,7 @@ contract CharityCrowdfunding {
         Campaign storage campaign = campaigns[_campaignId];
         campaign.totalCollected += msg.value;
         donations[_campaignId][msg.sender] += msg.value;
-
-        // Reward logic omitted for prototype simplicity
-        
+                
         emit DonationMade(_campaignId, msg.sender, msg.value);
     }
 
