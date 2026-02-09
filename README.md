@@ -22,7 +22,26 @@ The Blockchain Layer executes smart contracts on the Ethereum network, processes
 Users access the platform through a web interface and retrieve available campaigns. To donate, they connect their MetaMask wallet and approve a transaction created using Ethers.js. Once the transaction is confirmed on the blockchain, the smart contract updates the on-chain state and emits an event. The frontend then reflects the updated donation data to the user.
 <img width="1920" height="1080" alt="BLOCKCHAIN" src="https://github.com/user-attachments/assets/b639c2fc-6373-4a21-b370-0e40aa9d5469" />
 
+## Quick Start
 
+### 1. Install dependencies
+```npm install``` - installs all project dependencies required to run smart contracts and frontend
+
+### 2. Start local Ethereum network
+```npm run node``` - starts a local Ethereum blockchain with pre-funded test accounts
+
+### 3. Deploy the reward token (new terminal)
+```npm run deploy:token``` - deploys the ERC-20 reward token to the local blockchain
+
+### 4. Set TOKEN_ADDRESS in frontend/js/app.js
+```const TOKEN_ADDRESS = "0x..."``` -  Set the deployed token address in frontend/js/app.js
+
+### 5. Configure MetaMask
+```Network: Localhost 8545```
+```Chain ID: 31337```
+
+### 6. Run frontend
+```open frontend/index.html using any static server```
 
 ## Technology Stack
 The project uses Solidity and Hardhat for smart contract development and testing. The frontend is implemented using HTML5, CSS3, and JavaScript, with Ethers.js enabling blockchain interaction. Supporting services are built using Node.js and Express.js, while MongoDB is used for off-chain data storage.
